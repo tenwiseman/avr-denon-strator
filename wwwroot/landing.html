@@ -275,7 +275,7 @@
                 const o = {};
                 new FormData(form).forEach( ( value, key) => o[key] = value);
 
-                const response = await fetch('http://localhost:8000/query', { 
+                const response = await fetch('http://docker3.onthetip.co.uk:8000/query', { 
                     headers: {
                         'Content-Type': 'application/json'
                     },
