@@ -4,6 +4,7 @@
 */
 
 const express = require('express');
+const cors = require('cors');
 const SocketClient = require('./lib/SocketClient.js');
 const Readable = require('stream').Readable;
 
@@ -29,18 +30,11 @@ const SOCKET_PORT = 23;
 const app = express();
 const PORT = 8000;
 
-// CORS middleware
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-    if (req.method === "OPTIONS") {
-        return res.sendStatus(204);
-    }
-
-    next();
-});
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 
 // Middleware to parse JSON requests
@@ -63,11 +57,6 @@ var socketClient = null;
 
 // Connect a ReadableStream to the browser
 app.get('/connect', async (req, res) => {
-
-    res.set("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    res.sendStatus(204);
 
     // open new stream
     stream = new RealTimeStream();
