@@ -32,7 +32,7 @@ The included Dockerfile will install dependencies and run up an Alpine image.
 
 ### Running from the command line
 1) Navigate to the root of this project in the command line.
-1) Install Node (http://nodejs.org) and execute `npm install`. 
+1) Install Node (http://nodejs.org) and execute `npm install`
 2) Run `node .` to launch the web server.
 
 ## Notes
@@ -40,13 +40,13 @@ The included Dockerfile will install dependencies and run up an Alpine image.
 find a closer one matching your receiver on Google.
 - The reload button simply refreshes the page, a connection to the AVR is still magically maintained.
 - Updated in real-time, the web interface also shows some user actions made with the receiver's front panel or remote control. Try the volume control!
-- However, be very careful typing direct commands that set volume.
-  With the wrong setting you could immediately damage your speakers _and_ scare the hell out of the cat, quite easily.
+- However, be very careful typing direct commands that set volume! With the wrong setting applied you could immediately damage your speakers and I take no responsibility for that.  
 - Diagnostic output is also available on the process stdout stream.
 - Usage is at your own risk.
 
 ## Acknowledgements
-- Denon is just some Electronics company I have no connection with other than buying their things secondhand on eBay. This receiver is now over 15 years old.
+- Denon is just some Electronics company I have no connection with other than buying their things secondhand on eBay. This receiver I own is now over 15 years old!
   
   They made some good equipment but sadly their future as of 2024 looks very bleak.
   
+Update: 2026. They are still surviving...
