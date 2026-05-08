@@ -4,7 +4,6 @@
 */
 
 const express = require('express');
-// const cors = require('cors');
 const SocketClient = require('./lib/SocketClient.js');
 const Readable = require('stream').Readable;
 
@@ -30,21 +29,14 @@ const SOCKET_PORT = 23;
 const app = express();
 const PORT = 8000;
 
-// Middleware for CORS Default
-// app.use(cors({
-//     origin: '*',
-//     methods: ['GET', 'POST', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Authorization']
-// }));
-
-// Middleware to parse JSON requests
+/// Middleware to parse JSON requests
 app.use(express.json());
 
 // Middleware to serve static assets
 app.use(express.static('wwwroot', {
     setHeaders: function(res, path) {
         // no need for headers, but add them here if you want some!
-        //res.set("Access-Control-Allow-Origin", "*");
+        // res.set("Access-Control-Allow-Origin", "*");
     }
 }));
 
