@@ -1,6 +1,6 @@
 /*
    https://github.com/tenwiseman/avr-denonstrator
-   tenwiseman, Feb 2025 - MIT license.
+   tenwiseman, APR 2026 - GPLv3 license.
 */
 
 const express = require('express');
@@ -30,12 +30,12 @@ const SOCKET_PORT = 23;
 const app = express();
 const PORT = 8000;
 
+// Middleware for CORS Default
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
 
 // Middleware to parse JSON requests
 app.use(express.json());
