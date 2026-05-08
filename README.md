@@ -49,4 +49,11 @@ find a closer one matching your receiver on Google.
   
   They made some good equipment but sadly their future as of 2024 looks very bleak.
   
-Update: 2026. They are still surviving...
+Update: 2026. Denon are still surviving...
+
+## Changes
+
+Apr 2026 -
+- license: GPLv3
+- fixes: locahost refs removed in JS
+- tested: works in nodejs v24.15.0
