@@ -29,6 +29,12 @@ const SOCKET_PORT = 23;
 const app = express();
 const PORT = 8000;
 
+// CORS middleware
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+}
+
+
 // Middleware to parse JSON requests
 app.use(express.json());
 
@@ -36,7 +42,7 @@ app.use(express.json());
 app.use(express.static('wwwroot', {
     setHeaders: function(res, path) {
         // no need for headers, but add them here if you want some!
-        res.set("Access-Control-Allow-Origin", "*");
+        //res.set("Access-Control-Allow-Origin", "*");
     }
 }));
 
