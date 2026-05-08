@@ -1,0 +1,9 @@
+services:
+  avr_denon_strator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tenwiseman/avr-denon-strator
+    user: root
+    ports:
+      - "8000:8000"
