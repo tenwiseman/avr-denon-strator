@@ -64,6 +64,8 @@ var socketClient = null;
 // Connect a ReadableStream to the browser
 app.get('/connect', async (req, res) => {
 
+    res.set("Access-Control-Allow-Origin", "*");
+
     // open new stream
     stream = new RealTimeStream();
 
