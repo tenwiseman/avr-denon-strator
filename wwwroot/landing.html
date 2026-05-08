@@ -228,8 +228,6 @@
 
                 try {
 
-                    // const response = await fetch('http://docker3.onthetip.co.uk:8000/connect', { 
-
                     const response = await fetch('/connect', { 
                         headers: {
                             'Content-Type': 'application/stream+json',
@@ -277,8 +275,6 @@
                 const o = {};
                 new FormData(form).forEach( ( value, key) => o[key] = value);
 
-                // const response = await fetch('http://docker3.onthetip.co.uk:8000/query', { 
-          
                 const response = await fetch('/query', { 
                     headers: {
                         'Content-Type': 'application/json'
