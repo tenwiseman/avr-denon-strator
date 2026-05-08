@@ -28,10 +28,18 @@ But a rabbit hole had only opened and I just had to look into it.
 Change the ip address of the AVR and REST port in server.js (default: 8000) 
 
 ### Running in Docker
-The included Dockerfile will install dependencies and run up an Alpine image.
+The included compose.yaml with its Dockerfile will install dependencies and run up an Alpine image.
+
+As user, run the comand:
+```
+docker compose up
+```
 
 ### Running from the command line
-1) Navigate to the root of this project in the command line.
+
+This is an option without using Docker.
+
+1) As user, navigate to the root of this project in the command line.
 1) Install Node (http://nodejs.org) and execute `npm install`
 2) Run `node .` to launch the web server.
 
