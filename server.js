@@ -36,7 +36,7 @@ app.use(express.json());
 app.use(express.static('wwwroot', {
     setHeaders: function(res, path) {
         // no need for headers, but add them here if you want some!
-        // res.set("Access-Control-Allow-Origin", "*");
+        res.set("Access-Control-Allow-Origin", "*");
     }
 }));
 
