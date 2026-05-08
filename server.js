@@ -4,7 +4,7 @@
 */
 
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const SocketClient = require('./lib/SocketClient.js');
 const Readable = require('stream').Readable;
 
@@ -31,11 +31,11 @@ const app = express();
 const PORT = 8000;
 
 // Middleware for CORS Default
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//     origin: '*',
+//     methods: ['GET', 'POST', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 // Middleware to parse JSON requests
 app.use(express.json());
