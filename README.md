@@ -65,3 +65,7 @@ Apr 2026 -
 - license: GPLv3
 - fixes: locahost refs removed in JS
 - tested: works in nodejs v24.15.0
+
+Jun 2026 -
+- SSL cert
+

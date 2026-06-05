@@ -4,6 +4,9 @@
 */
 
 const express = require('express');
+const https = require('https');
+const http = require('http');
+const fs = require('fs');
 const SocketClient = require('./lib/SocketClient.js');
 const Readable = require('stream').Readable;
 
@@ -112,7 +115,19 @@ app.get('/', (req, res) => {
 
 
 // Start the Express server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+
+var privateKey = fs.readFileSync( './ssl/mycert.key' );
+var certificate = fs.readFileSync( './ssl/mycert.crt' );
+
+var options = {
+  key: privateKey,
+  cert: certificate
+}
+
+http.createServer(app).listen(8000);
+https.createServer(options, app).listen(8443);
+
+//app.listen(PORT, () => {
+//    console.log(`Server running on http://localhost:${PORT}`);
+//});
 
