@@ -25,7 +25,9 @@ But a rabbit hole had only opened and I just had to look into it.
 ***
 
 ## Configuration
-Change the ip address of the AVR and REST port in server.js (default: 8000) 
+Change the ip address of the AVR and REST port in server.js
+
+* Choose between HTTP(8000) and HTTPS(8443) (certs in /SSL) 
 
 ### Running in Docker
 The included compose.yaml with its Dockerfile will install dependencies and run up an Alpine image.
@@ -65,3 +67,7 @@ Apr 2026 -
 - license: GPLv3
 - fixes: locahost refs removed in JS
 - tested: works in nodejs v24.15.0
+
+Jun 2026 -
+- SSL cert
+

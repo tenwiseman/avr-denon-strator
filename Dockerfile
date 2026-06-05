@@ -12,6 +12,7 @@ RUN npm install --production
 COPY . /usr/src/app
 
 # Expose the web service port
-EXPOSE 8000
+# EXPOST 8000
+EXPOSE 8443 
 
 CMD node .
