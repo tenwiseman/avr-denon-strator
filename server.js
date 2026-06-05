@@ -116,11 +116,10 @@ app.get('/', (req, res) => {
 
 
 // Start the Express server (HTTP)
-http.createServer(app).listen(PORT);
-console.log(`HTTP Server running on ${PORT}`);
+// http.createServer(app).listen(PORT);
+// console.log(`HTTP Server running on ${PORT}`);
 
-
-// Start the Express server (HTTPS)
+// Setup for SSL 
 var privateKey = fs.readFileSync( './ssl/mycert.key' );
 var certificate = fs.readFileSync( './ssl/mycert.crt' );
 
@@ -129,6 +128,7 @@ var options = {
   cert: certificate
 }
 
+// Start the Express server (HTTPS)
 https.createServer(options, app).listen(SSL_PORT);
 console.log(`HTTPS Server running on ${SSL_PORT}`);
 
