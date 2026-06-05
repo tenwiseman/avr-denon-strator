@@ -31,6 +31,7 @@ const SOCKET_PORT = 23;
 // Initialize the socket client and Express app
 const app = express();
 const PORT = 8000;
+const SSL_PORT = 8443;
 
 /// Middleware to parse JSON requests
 app.use(express.json());
@@ -114,8 +115,12 @@ app.get('/', (req, res) => {
 });
 
 
-// Start the Express server
+// Start the Express server (HTTP)
+http.createServer(app).listen(PORT);
+console.log(`HTTP Server running on ${PORT}`);
 
+
+// Start the Express server (HTTPS)
 var privateKey = fs.readFileSync( './ssl/mycert.key' );
 var certificate = fs.readFileSync( './ssl/mycert.crt' );
 
@@ -124,10 +129,7 @@ var options = {
   cert: certificate
 }
 
-http.createServer(app).listen(8000);
-https.createServer(options, app).listen(8443);
+https.createServer(options, app).listen(SSL_PORT);
+console.log(`HTTPS Server running on ${SSL_PORT}`);
 
-//app.listen(PORT, () => {
-//    console.log(`Server running on http://localhost:${PORT}`);
-//});
 
