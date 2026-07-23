@@ -27,7 +27,8 @@ But a rabbit hole had only opened and I just had to look into it.
 ## Configuration
 Change the ip address of the AVR and REST port in server.js
 
-* Choose between HTTP(8000) and HTTPS(8443) (certs in /SSL) 
+* Choose between HTTP(8000) and HTTPS(8443)
+* If using HTTPS, place certs in a directory named 'ssl' 
 
 ### Running in Docker
 The included compose.yaml with its Dockerfile will install dependencies and run up an Alpine image.
